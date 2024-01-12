@@ -1,0 +1,17 @@
+name: Variable Setup
+
+on:
+  push:
+    branches:
+      - testing-files
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set environment variable
+        run: echo "TEST_LINK=https://www.netflix.com/" >> $GITHUB_ENV
